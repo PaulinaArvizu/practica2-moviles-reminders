@@ -68,7 +68,8 @@ class _HomePageState extends State<HomePage> {
           ).then(
             (result) {
               if (result != null) {
-                // TODO: bloc add evento to add reminder to db
+                // DONE: bloc add event to add reminder to db
+                _homeBloc.add(OnAddElementEvent(todoReminder: result));
                 // TODO: add reminder to HomeBody list view
               }
             },
