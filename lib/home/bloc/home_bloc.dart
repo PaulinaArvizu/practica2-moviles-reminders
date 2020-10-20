@@ -60,7 +60,13 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   }
 
   void _removeTodoReminder(int removedAtIndex) {
-    // TODO:delete item here
+    // DONE:delete item here
+    var reminderList = List();
+    if (_reminderBox.isNotEmpty) {
+      reminderList = _reminderBox.get("reminders");
+      reminderList.removeAt(removedAtIndex);
+      _reminderBox.put("reminders", reminderList);
+    }
   }
 }
 
